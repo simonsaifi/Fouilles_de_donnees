@@ -1,7 +1,7 @@
 import pandas as pd
 
 # Simuler les données chargées à partir de votre image
-file_path = 'donnees.csv'  # Remplacez ceci par votre chemin de fichier
+file_path = 'donnees.csv'
 data = pd.read_csv(file_path)
 
 # Liste des colonnes à minimiser et à maximiser
