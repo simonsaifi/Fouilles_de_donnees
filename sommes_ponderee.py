@@ -18,14 +18,18 @@ for col in data.columns:
 
 # Appliquer des poids égaux et calculer le score
 weights = {
-    'Prix': 0.25,
-    'Vitesse_Max': 0.15,
+    'Prix': 0.3,
+    'Vitesse_Max': 0.2,
     'Conso_Moy': 0.1,
     'Dis_Freinage': 0.1,
     'Confort': 0.1,
-    'Vol_Coffre': 0.2,
-    'Acceleration': 0.1
+    'Vol_Coffre': 0.15,
+    'Acceleration': 0.05
 }
+
+#Pour s'assurer que les poids dont bien distribuées
+assert sum(weights.values()) == 1, "La somme des poids doit être égale à 1"
+
 data['Score'] = sum(data[col] * weights[col] for col in weights.keys())
 
 # Trier les données par score en ordre décroissant pour voir les meilleures options en haut
